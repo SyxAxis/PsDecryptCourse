@@ -12,7 +12,9 @@ Invoke-Decryption - This will take a single course object from Get-Courses and d
 
 Perform:
 
+```
 $courses = Get-Courses
 ( select a course from $courses.Course grab the ID )
 $course = $courses | where { $_.Course.Name -eq "498ebdff-3ef5-4bc0-a37a-e8471f17fd8c" }
 Invoke-Decryption -courseitem $course -outputpath "C:\tmp2"
+```
