@@ -5,7 +5,9 @@ Decrypt video courses using simple Powershell cmdlets
 
 After building the solution, load the module into Powershell:
 
+```Powershell
 Import-Module PoSHLib01
+```
 
 This houses two cmdlets.
 
@@ -14,7 +16,7 @@ This houses two cmdlets.
 
 Perform:
 
-```
+```Powershell
 $courses = Get-Courses
 ( select a course from $courses.Course grab the ID or title )
 $course = $courses | where { $_.Course.Name -eq "498ebdff-3ef5-4bc0-a37a-e8471f17fd8c" }
@@ -22,7 +24,7 @@ $course = $courses | where { $_.Course.Title -eq "Advanced Course About Doing St
 Invoke-Decryption -courseitem $course -outputpath "C:\dumpcourses"
 ```
 
-```
+```Powershell
 $courses = Get-Courses
 $courses | % {
   Invoke-Decryption -courseitem $_ -outputpath "C:\dumpcourses"
